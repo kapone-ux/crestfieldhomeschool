@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply Now | Crestfield Tuition &amp; Homeschool</title>
+    <meta
+      name="description"
+      content="Apply to Crestfield Tuition & Homeschool for tuition, homeschooling, Cambridge, Pearson Edexcel, IGCSE, A Levels, and Checkpoints academic support."
+    />
+    <meta name="theme-color" content="#0b4f8f" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="legal-page apply-page">
+    <header class="legal-header">
+      <a class="brand" href="index.html" aria-label="Crestfield Tuition &amp; Homeschool home">
+        <img class="brand-logo" src="crestfield-logo.svg" alt="Crestfield Tuition &amp; Homeschool" />
+      </a>
+      <nav class="legal-header-actions" aria-label="Application page navigation">
+        <a href="index.html">Home</a>
+        <a href="fee-structure.html">Fees</a>
+        <a href="https://wa.me/254758219179?text=Hello%20I%20would%20like%20to%20inquire%20about%20admissions" target="_blank" rel="noopener">Chat With Admissions</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="apply-hero">
+        <div class="apply-hero-copy">
+          <p class="eyebrow">Student Application</p>
+          <h1>Apply to Crestfield Tuition &amp; Homeschool</h1>
+          <p>
+            Share the learner's details and the admissions team will follow up with the right tuition, homeschool, Cambridge, Pearson Edexcel, IGCSE, A Levels, or Checkpoints support.
+          </p>
+          <div class="apply-hero-actions">
+            <a class="btn btn-primary" href="#application-form">Start Application</a>
+            <a class="btn btn-soft" href="https://wa.me/254758219179?text=Hello%20I%20would%20like%20to%20inquire%20about%20admissions" target="_blank" rel="noopener">Chat With Admissions</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="apply-layout" id="application-form" aria-labelledby="student-app-title">
+        <div class="application-copy">
+          <p class="eyebrow">Application Details</p>
+          <h2 id="student-app-title">Tell us about the learner.</h2>
+          <p>
+            After submission, your email app will open with the application details addressed to Crestfield admissions. You can also use WhatsApp for a faster conversation.
+          </p>
+          <div class="footer-notes" aria-label="Admissions options">
+            <span>Online and in-person support</span>
+            <span>Cambridge and Pearson Edexcel</span>
+            <span>Homeschool and tuition pathways</span>
+          </div>
+        </div>
+
+        <form class="career-form apply-form" id="applyForm">
+          <label>
+            Parent or student name
+            <input type="text" name="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            Email address
+            <input type="email" name="email" placeholder="your.email@example.com" required />
+          </label>
+          <label>
+            Phone number
+            <input type="tel" name="phone" placeholder="+254..." required />
+          </label>
+          <label>
+            Student name
+            <input type="text" name="studentName" placeholder="Student's full name" required />
+          </label>
+          <label>
+            Student age or grade
+            <input type="text" name="studentAge" placeholder="e.g., 15 years or Grade 10" required />
+          </label>
+          <label>
+            Course interested in
+            <select name="course" required>
+              <option value="">Select a program...</option>
+              <option>Cambridge Primary</option>
+              <option>Cambridge Checkpoint</option>
+              <option>IGCSE</option>
+              <option>A Levels</option>
+              <option>Pearson Edexcel</option>
+              <option>Homeschooling</option>
+              <option>Tuition Support</option>
+            </select>
+          </label>
+          <label>
+            Learning preference
+            <select name="learningMode" required>
+              <option value="">Select preferred mode...</option>
+              <option>Online Learning</option>
+              <option>In-Person</option>
+              <option>Hybrid (Online + In-Person)</option>
+              <option>Homeschooling</option>
+            </select>
+          </label>
+          <label>
+            Subjects needed
+            <textarea name="subjects" rows="3" placeholder="e.g., Mathematics, English, Biology, etc." required></textarea>
+          </label>
+          <label>
+            Additional information
+            <textarea name="message" rows="3" placeholder="Tell us more about your learning goals or any specific requirements..."></textarea>
+          </label>
+          <button class="btn btn-primary full-field" type="submit">Submit Application</button>
+          <p class="career-form-note full-field" id="applyFormNote" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <a class="whatsapp-float" href="https://wa.me/254758219179?text=Hello%20I%20would%20like%20to%20inquire%20about%20admissions" target="_blank" rel="noopener" aria-label="Chat with admissions on WhatsApp">WA</a>
+
+    <script>
+      const applyForm = document.querySelector("#applyForm");
+      const applyFormNote = document.querySelector("#applyFormNote");
+
+      applyForm?.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!applyForm.checkValidity()) {
+          applyForm.reportValidity();
+          return;
+        }
+
+        const data = new FormData(applyForm);
+        const subject = encodeURIComponent(`Student application from ${data.get("name")}`);
+        const body = encodeURIComponent(
+          `Parent/student name: ${data.get("name")}\n` +
+          `Email: ${data.get("email")}\n` +
+          `Phone: ${data.get("phone")}\n` +
+          `Student name: ${data.get("studentName")}\n` +
+          `Student age/grade: ${data.get("studentAge")}\n` +
+          `Course interested in: ${data.get("course")}\n` +
+          `Learning preference: ${data.get("learningMode")}\n` +
+          `Subjects needed: ${data.get("subjects")}\n\n` +
+          `Additional information:\n${data.get("message") || "No extra message provided."}`
+        );
+
+        applyFormNote.textContent = "Opening your email app with the application details.";
+        applyFormNote.classList.add("is-success");
+        window.location.href = `mailto:hrcrestfieldschool@gmail.com?subject=${subject}&body=${body}`;
+      });
+    </script>
+  </body>
+</html>

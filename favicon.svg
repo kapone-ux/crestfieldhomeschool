@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Crestfield International Academy favicon</title>
+  <desc id="desc">A blue C mark with an orange graduation cap and white CF letters for Crestfield International Academy.</desc>
+  <rect width="512" height="512" rx="96" fill="#ffffff"/>
+  <g transform="translate(48 72) scale(2.55)">
+    <path
+      d="M137.9 52.1c-17-12.9-37.5-18.6-59.2-15.9C34.8 41.6 3.8 80.8 9.7 125.4c5.8 44.1 44.6 74.2 88.3 68.5 27.1-3.5 49.2-19 62.6-41.3l-37.4-23.9c-7 12-17.8 20-31.3 21.8-20.4 2.7-37.6-10.8-40.5-32.5-2.8-21.5 10.3-39.1 30.7-41.8 13.9-1.8 26.3 3.1 36.1 13.5l32.4-30.2c-4-4.6-8.2-8.4-12.7-11.4z"
+      fill="#0b5e9f"
+    />
+    <path d="M28 34.6 98 4l72 30.6-72 31.5L28 34.6z" fill="#e36d12"/>
+    <path d="M52.2 49.2v36.1h19.3V57.7l26.5 11.6 46.2-20.1v36.1h19.3V40.7L98 69.3 52.2 49.2z" fill="#e36d12"/>
+    <text x="76" y="43" fill="#ffffff" font-family="Georgia, serif" font-size="31" font-weight="700">CF</text>
+  </g>
+</svg>
